@@ -1,0 +1,28 @@
+$op-topbar-color: #FFF;
+
+.op-topbar {
+  background: $op-color-blue-dark;
+  line-height: 3em;
+
+  &:after {
+    clear: both;
+    content: ' ';
+  }
+
+  a {
+    color: $op-topbar-color;
+  }
+
+  h1 a {
+    font-weight: $op-nav-selected-weight;
+  }
+
+  input {
+    background-color: $op-color-blue-light;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #FFF;
+    margin: 9px 0;
+    padding: 5px;
+  }
+}

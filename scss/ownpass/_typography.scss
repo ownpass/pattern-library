@@ -1,0 +1,23 @@
+a {
+  color: $op-color-green-dark;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.op-text-small {
+  font-size: 0.8em;
+}

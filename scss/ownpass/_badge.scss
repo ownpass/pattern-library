@@ -1,0 +1,19 @@
+$op-badge-background: $op-color-green-normal;
+$op-badge-color: #FFF;
+
+.op-badge {
+  background: $op-badge-background;
+  border-radius: 2em;
+  color: $op-badge-color;
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: .99;
+  min-height: 1em;
+  min-width: 1em;
+  padding: 3px 5px 2px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+}
