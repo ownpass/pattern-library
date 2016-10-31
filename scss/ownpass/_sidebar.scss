@@ -1,0 +1,48 @@
+.op-sidebar {
+  background: $op-color-green-light;
+  box-sizing: border-box;
+  color: #FFF;
+  width: 60px;
+  background: #15B588;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  position: absolute;
+  transition: width .25s ease-in-out;
+
+  a {
+    color: #fff;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    text-indent: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  li {
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+  }
+
+  li > a > svg {
+    display: block;
+    fill: #fff;
+    float: left;
+    height: auto;
+    left: 10px;
+    position: relative;
+    top: 12px;
+    transform: rotateX(180deg) translateY(5px);
+    transition: transform .25s ease-in-out;
+    width: 32px;
+  }
+
+  li > a > span {
+    display: inline-block;
+    overflow: hidden;
+    transition: transform 0.25s ease-in-out;
+    white-space: nowrap;
+  }
+}
