@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>OwnPass Pattern Library</title>
+        <link href="../build/css/ownpass.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
+        <div class="op-sidebar" aria-expanded="true">
+            <nav class="op-navgroup op-navgroup-vertical" role="navigation">
+                <ul class="op-nav">
+                    <li><a href="badge.html"><span>Badge</span></a></li>
+                    <li><a href="extension-box.html"><span>Extension Box</span></a></li>
+                    <li><a href="nav-horizontal.html"><span>Horizontal Navigation</span></a></li>
+                    <li><a href="nav-vertical.html"><span>Vertical Navigation</span></a></li>
+                    <li><a href="sidebar.html"><span>Sidebar</span></a></li>
+                    <li><a href="table.html"><span>Table</span></a></li>
+                    <li><a href="topbar.html"><span>Topbar</span></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="op-sidebar-content">
+            <header class="op-topbar" role="banner">
+                <nav class="op-navgroup op-navgroup-horizontal" role="navigation">
+                    <div class="op-navgroup-primary">
+                        <ul class="op-nav">
+                            <li>
+                                <h1><a href="index.html">OwnPass</a></h1>
+                            </li>
+                            <li>
+                                <a href="https://github.com/ownpass/pattern-library">
+                                    Repository
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="op-content">
+
+                <div class="op-extension-box">
+                    <div class="op-extension-box-title">
+                        <h1>Register Device</h1>
+                    </div>
+
+                    <div class="op-extension-box-body">
+                        <p>
+                            Before you can use this device, you need to register it. Enter a description below
+                            so you can identify this device. OwnPass will send you an e-mail with an activation
+                            code which can be used to activate this device.
+                        </p>
+
+                        <form action="" method="post">
+                            <p>
+                                <label for="description">Description</label>
+                                <textarea id="description"></textarea>
+                            </p>
+
+                            <div class="op-button-bar">
+                                <button>
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <a href="https://github.com/ownpass/pattern-library"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../build/js/ownpass.min.js"></script>
+
+    </body>
+</html>

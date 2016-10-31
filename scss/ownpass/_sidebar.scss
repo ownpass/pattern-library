@@ -1,14 +1,16 @@
+$op-sidebar-width-expanded: 240px;
+$op-sidebar-width-collapsed: 60px;
+
 .op-sidebar {
   background: $op-color-green-light;
   box-sizing: border-box;
   color: #FFF;
-  width: 60px;
-  background: #15B588;
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   transition: width .25s ease-in-out;
+  width: $op-sidebar-width-collapsed;
 
   a {
     color: #fff;
@@ -53,14 +55,14 @@
 }
 
 .op-sidebar[aria-expanded="true"] {
-  width: 160px;
+  width: $op-sidebar-width-expanded;
 }
 
 .op-sidebar-content {
-  margin-left: 60px;
+  margin-left: $op-sidebar-width-collapsed;
   transition: margin .25s ease-in-out;
 }
 
 .op-sidebar[aria-expanded="true"] + .op-sidebar-content {
-  margin-left: 160px;
+  margin-left: $op-sidebar-width-expanded;
 }
