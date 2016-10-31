@@ -47,6 +47,10 @@
   }
 }
 
+.op-sidebar[aria-expanded="true"] {
+  width: 160px;
+}
+
 .op-sidebar-content {
   margin-left: 60px;
   transition: margin .25s ease-in-out;

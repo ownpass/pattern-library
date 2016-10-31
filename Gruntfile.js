@@ -6,6 +6,18 @@ module.exports = function (grunt) {
                 'build/'
             ]
         },
+        concat: {
+            options: {
+                banner: "/*! OwnPass v<%= pkg.version %> | " +
+                "(c) OwnPass | github.com/ownpass/pattern-library */\n",
+            },
+            build: {
+                src: [
+                    'js/op.sidebar.js'
+                ],
+                dest: 'build/js/ownpass.js',
+            }
+        },
         jshint: {
             options: grunt.file.readJSON('jshint.json'),
             all: {
@@ -47,6 +59,29 @@ module.exports = function (grunt) {
                 }
             }
         },
+        uglify: {
+            dist: {
+                files: {
+                    'build/js/ownpass.min.js': ['build/js/ownpass.js']
+                },
+                options: {
+                    preserveComments: false,
+                    sourceMap: true,
+                    sourceMapName: "build/js/ownpass.min.js.map",
+                    report: "min",
+                    beautify: {
+                        "ascii_only": true
+                    },
+                    banner: "/*! OwnPass v<%= pkg.version %> | " +
+                    "(c) OwnPass | github.com/ownpass/pattern-library */",
+                    compress: {
+                        "hoist_funs": false,
+                        loops: false,
+                        unused: false
+                    }
+                }
+            }
+        },
         watch: {
             build: {
                 files: [
@@ -61,6 +96,7 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-sass');
@@ -69,6 +105,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'clean',
-        'sass'
+        'sass',
+        'jshint',
+        'concat',
+        'uglify'
     ]);
 };
