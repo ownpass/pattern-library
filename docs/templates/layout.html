@@ -11,10 +11,10 @@
         <div class="op-sidebar" aria-expanded="true">
             <nav class="op-navgroup op-navgroup-vertical" role="navigation">
                 <ul class="op-nav">
-                    {% for pattern in patterns %}
+                    {% for sidebarItem in sidebarItems %}
                     <li>
-                        <a href="{{ pattern.path }}">
-                            <span>{{ pattern.name }}</span>
+                        <a href="{{ sidebarItem.path }}">
+                            <span>{{ sidebarItem.name }}</span>
                         </a>
                     </li>
                     {% endfor %}
@@ -29,6 +29,16 @@
                         <ul class="op-nav">
                             <li>
                                 <h1><a href="{{ basePath }}/index.html">OwnPass</a></h1>
+                            </li>
+                            <li>
+                                <a href="{{ basePath }}/patterns/badge.html">
+                                    Patterns
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ basePath }}/device/login.html">
+                                    Device Screens
+                                </a>
                             </li>
                             <li>
                                 <a href="https://github.com/ownpass/pattern-library">

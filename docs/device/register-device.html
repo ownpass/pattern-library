@@ -9,25 +9,27 @@
 
         <div class="op-extension-box">
             <div class="op-extension-box-title">
-                <h1>Recover Password</h1>
+                <h1>Register Device</h1>
             </div>
 
             <div class="op-extension-box-body">
-                <form action="" method="post">
+                <p>
+                    Before you can use this device, you need to register it. Enter a description below
+                    so you can identify this device. OwnPass will send you an e-mail with an activation
+                    code which can be used to activate this device.
+                </p>
+
+                <form action="activate-device.html" method="post">
                     <p>
-                        <label for="email">E-mail address</label>
-                        <input type="text" name="email" id="email">
+                        <label for="description">Description</label>
+                        <textarea id="description"></textarea>
                     </p>
 
                     <div class="op-button-bar">
                         <button>
-                            Recover
+                            Register
                         </button>
                     </div>
-
-                    <small>
-                        <a href="">Click here</a> to login.
-                    </small>
                 </form>
             </div>
         </div>

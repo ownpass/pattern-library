@@ -12,6 +12,29 @@ module.exports = function (grunt) {
 
     swig.setFilter('highlight', highlightCallback);
 
+    var loadDeviceExamples = function (options) {
+        var result = [];
+
+        grunt.file.recurse(options.deviceDir, function (abspath, rootdir, subdir, filename) {
+            var splitted = path.basename(filename, '.html').split('-');
+
+            for (var i = 0; i < splitted.length; ++i) {
+                splitted[i] = splitted[i][0].toUpperCase() + splitted[i].slice(1);
+            }
+
+            result.push({
+                name: splitted.join(' '),
+                path: '../../' + abspath,
+                abspath: '../../' + abspath,
+                rootdir: rootdir,
+                subdir: subdir,
+                filename: filename
+            });
+        });
+
+        return result;
+    };
+
     var loadPatterns = function (options) {
         var result = [],
             patternFiles = grunt.file.expand({
@@ -39,7 +62,26 @@ module.exports = function (grunt) {
     grunt.registerTask("build-docs", "Creates the documentation.", function () {
         var options = this.options(),
             patterns = loadPatterns(options),
+            deviceExamples = loadDeviceExamples(options),
+            deviceTemplate = swig.compileFile(options.templatesDir + '/device.html');
             patternTemplate = swig.compileFile(options.templatesDir + '/pattern.html');
+
+        deviceExamples.forEach(function (example) {
+            var destination, basePath = '..';
+
+            destination = options.dest + 'docs/device/' + example.filename;
+
+            grunt.log.ok("Building page " + destination);
+
+            grunt.file.write(destination, deviceTemplate({
+                page: {
+                    title: ''
+                },
+                basePath: basePath,
+                example: example,
+                sidebarItems: deviceExamples
+            }));
+        });
 
         patterns.forEach(function (pattern) {
             var destination, basePath = '..';
@@ -54,10 +96,10 @@ module.exports = function (grunt) {
                 },
                 basePath: basePath,
                 pattern: pattern,
-                patterns: (function(patterns) {
+                sidebarItems: (function (patterns) {
                     var result = [];
 
-                    patterns.forEach(function(pattern) {
+                    patterns.forEach(function (pattern) {
                         var newPattern = JSON.parse(JSON.stringify(pattern));
 
                         newPattern.path = basePath + '/' + pattern.path;
@@ -80,10 +122,10 @@ module.exports = function (grunt) {
             grunt.file.write(destination, template({
                 page: {},
                 basePath: '.',
-                patterns: (function(patterns) {
+                sidebarItems: (function (patterns) {
                     var result = [];
 
-                    patterns.forEach(function(pattern) {
+                    patterns.forEach(function (pattern) {
                         var newPattern = JSON.parse(JSON.stringify(pattern));
 
                         newPattern.path = basePath + '/' + pattern.path;
