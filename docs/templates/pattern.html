@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>{{ pattern.name }}</h1>
+
+    <h2>Summary</h2>
+
+    {% include pattern.summary %}
+
+    <h2>Syntax</h2>
+
+    <div style="background-color: #F9F9F9; margin-bottom: 20px; padding: 20px;">{{ pattern.syntax|highlight }}</div>
+
+    <h2>Example</h2>
+
+    <div style="margin-bottom: 20px;">
+        {% include pattern.example %}
+    </div>
+{% endblock %}

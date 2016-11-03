@@ -1,32 +1,3 @@
-a {
-  color: $op-color-green-dark;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  font-size: 1.3em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 20px;
-}
-
-p {
-  line-height: 1.5em;
-  margin-bottom: 10px;
-  text-align: justify;
-}
-
-.op-text-small {
-  font-size: 0.8em;
-}
+@import "header";
+@import "anchor";
+@import "text";
