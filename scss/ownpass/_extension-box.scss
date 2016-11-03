@@ -17,3 +17,32 @@
 .op-extension-box-body {
   padding: 10px;
 }
+
+#op-popup-screen .op-extension-box-body {
+  padding: 0;
+}
+
+#op-popup-menu {
+  list-style-type: none;
+
+  li a {
+    color: #000;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: $op-color-green-light;
+    color: #FFF;
+  }
+
+  li form {
+    padding: 10px;
+  }
+
+  li:nth-child(n + 2) {
+    background-color: #F9F9F9;
+    border-top: 1px solid #CCC;
+  }
+}
