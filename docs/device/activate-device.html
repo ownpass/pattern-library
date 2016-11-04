@@ -1,14 +1,14 @@
-<div class="op-extension-box">
-    <div class="op-extension-box-title">
+<div class="op-model-box">
+    <div class="op-model-box-title">
         <h1>Activate Device</h1>
     </div>
 
-    <div class="op-extension-box-body">
+    <div class="op-model-box-body">
         <p>
             We have sent you an e-mail containing an activation code. Please enter it below.
         </p>
 
-        <form action="popup.html" method="post">
+        <form action="2fa.html" method="post">
             <p>
                 <label for="code">Activation code</label>
                 <input type="text" name="code" id="code">
@@ -18,12 +18,14 @@
                 <button>
                     Activate
                 </button>
-            </div>
 
-            <small>
-                If you did not receive an activation code, you can <a href="">click here</a>
-                to register your device again.
-            </small>
+                <div>
+                    <small>
+                        If you did not receive an activation code, you can
+                        <a href="register-device.html">click here</a> to register your device again.
+                    </small>
+                </div>
+            </div>
         </form>
     </div>
 </div>

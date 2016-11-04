@@ -9,6 +9,7 @@ module.exports = function(grunt) {
             },
             build: 'build/',
             docs: 'docs/',
+            fonts: 'fonts/',
             grunt: 'grunt/',
             js: 'js/',
             scss: 'scss/'
@@ -33,6 +34,7 @@ module.exports = function(grunt) {
         'sass',
         'concat',
         'uglify',
+        'copy:fonts',
         'build-docs',
         'copy:build-docs'
     ]);

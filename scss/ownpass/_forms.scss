@@ -1,40 +1,65 @@
 label {
   display: block;
   font-weight: bold;
-  margin: 0px 0px 10px 0px;
+  margin: 0 0 5px;
 }
 
-button {
-  background-color: #00263e;
-  border: 0px;
-  color: #FFF;
-  cursor: pointer;
-  font-family: arial;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 10px;
+input[type="color"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"] {
+  box-sizing: border-box;
+  border: 1px solid #333;
+  display: block;
+  font-family: 'Rokkitt', serif;
+  font-size: 1rem;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 6px;
   width: 100%;
 }
 
-input[type="password"],
-input[type="text"],
-textarea {
-  border: 1px solid #00263e;
-  display: block;
-  font-size: 1em;
-  padding: 10px;
-  margin: 0px 0px 10px 0px;
-  width: 357px;
+button {
+  background: $op-color-green-light;
+  border: none 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Rokkitt', serif;
+  font-size: 1.3rem;
+  height: 40px;
+  text-align: center;
+  width: 200px;
 }
 
 textarea {
+  font-family: 'Rokkitt', serif;
+  font-size: 1.3rem;
   height: 150px;
+  padding: 10px;
   resize: vertical;
   width: 357px;
 }
 
 .op-button-bar {
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.op-button-bar > div {
+  margin-top: 10px;
+}
+
+.op-form-error {
+  color: #15B588;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+.op-form-row {
+  margin-bottom: 20px;
 }
 
 .op-form-value {

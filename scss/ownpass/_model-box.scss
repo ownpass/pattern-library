@@ -1,9 +1,9 @@
-.op-extension-box {
+.op-model-box {
   width: 400px;
 }
 
-.op-extension-box-title {
-  background-color: #00263e;
+.op-model-box-title {
+  background-color: $op-color-green-light;
   color: white;
   padding: 10px;
   text-align: center;
@@ -14,11 +14,11 @@
   }
 }
 
-.op-extension-box-body {
+.op-model-box-body {
   padding: 10px;
 }
 
-#op-popup-screen .op-extension-box-body {
+#op-popup-screen .op-model-box-body {
   padding: 0;
 }
 
@@ -33,7 +33,7 @@
   }
 
   li a:hover {
-    background-color: $op-color-green-light;
+    background-color: $op-color-green-dark;
     color: #FFF;
   }
 
