@@ -75,7 +75,7 @@ module.exports = function (grunt) {
 
             grunt.file.write(destination, deviceTemplate({
                 page: {
-                    title: ''
+                    title: example.name
                 },
                 basePath: basePath,
                 example: example,
