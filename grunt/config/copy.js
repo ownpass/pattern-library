@@ -4,11 +4,11 @@ module.exports = {
         files: [
             {
                 expand: true,
-                flatten: false,
+                flatten: true,
                 src: [
-                    '<%= paths.fonts %>/**/*'
+                    '<%= paths.fonts %>/Rokkitt/Rokkitt.woff2'
                 ],
-                dest: '<%= paths.build %>/'
+                dest: '<%= paths.build %>/fonts/'
             }
         ]
     },
@@ -37,10 +37,18 @@ module.exports = {
                 expand: true,
                 flatten: true,
                 src: [
-                    '<%= paths.build %>/fonts/**',
-                    '<%= paths.docs %>/assets/*.svg',
+                    '<%= paths.fonts %>/Rokkitt/Rokkitt.woff2'
                 ],
                 dest: '<%= paths.build %>/docs/fonts/',
+                filter: 'isFile'
+            },
+            {
+                expand: true,
+                flatten: true,
+                src: [
+                    '<%= paths.docs %>/assets/*.svg'
+                ],
+                dest: '<%= paths.build %>/docs/',
                 filter: 'isFile'
             }
         ]
